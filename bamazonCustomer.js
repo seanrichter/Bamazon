@@ -15,7 +15,7 @@ var Connection = mysql.createConnection({
     database: "bamazon_db"
 });
 
-Connection.connect(function(err){
+Connection.connect(function (err) {
     if (err) throw err;
     console.log(colors.cyan("Welcome! ...you are now connected to theh Bamazon Store database as id " + Connection.threadId));
 
@@ -23,7 +23,7 @@ Connection.connect(function(err){
 });
 
 //Display Inventory
-function bamazon(){
+function bamazon() {
     Connection.query('SELECT * FROM products', function (err, res) {
         if (err) throw err;
         //Cli-Table display with color
@@ -54,36 +54,36 @@ function bamazon(){
             },
         ])
 
-        //Ordering Function
-        .then(function (cart) {
-            var quantity = cart.quantity;
-            var itemId = cart.id;
+            //Ordering Function
+            .then(function (cart) {
+                var quantity = cart.quantity;
+                var itemId = cart.id;
 
-            Connection.query('SELECT * FROM products WHERE id=' + itemId, function(err, selectedItem) {
-                if (err) throw err;
+                Connection.query('SELECT * FROM products WHERE id=' + itemId, function (err, selectedItem) {
+                    if (err) throw err;
 
-                //Verify item quantity is in inventory
-                if (selectedItem[0].stock_quantity - quantity >= 0) {
-                    console.log("INVENTORY AUDIT:  Quantity in stock: ".green + selectedItem[0].product_name.yellow +"to fill your order!".green);
-                    console.log("Congratulations! Bamazon has sufficient inventory of ".green + selectedItem[0].product_name + " to fill your order!".green);
+                    //Verify item quantity is in inventory
+                    if (selectedItem[0].stock_quantity - quantity >= 0) {
+                        console.log("INVENTORY AUDIT:  Quantity in stock: ".green + selectedItem[0].product_name.yellow + "to fill your order!".green);
+                        console.log("Congratulations! Bamazon has sufficient inventory of ".green + selectedItem[0].product_name + " to fill your order!".green);
 
-                    //Calculate total sale
-                    console.log("Thank you for your purchase.  Your order total will be ".green + (cart.quantity * selectedItem[0].price).toFixed(2).yellow + " dollars.".green, "\nThank you for shopping at Bamazon!".magenta);
+                        //Calculate total sale
+                        console.log("Thank you for your purchase.  Your order total will be ".green + (cart.quantity * selectedItem[0].price).toFixed(2).yellow + " dollars.".green, "\nThank you for shopping at Bamazon!".magenta);
 
-                    //remove purchased item from inventory
-                    Connection.query('UPDATE products SET stock_quantity=? WHERE id=?', [selectedItem[0].stock_quantity - quantity, itemId],
-                        function (err, inventory) {
-                            if (err) throw err;
+                        //remove purchased item from inventory
+                        Connection.query('UPDATE products SET stock_quantity=? WHERE id=?', [selectedItem[0].stock_quantity - quantity, itemId],
+                            function (err, inventory) {
+                                if (err) throw err;
 
-                            bamazon(); 
-                        });
-                }
-                //Low inventory warning
-                else{
-                    console.log ("INSUFFICIENT INVENTORY ALERT: \nBamazon only has ".red + selectedItem[0].stock_quantity + " " + selectedItem[0].product_name.cyan + " in stock at this moment. \nPlease make another selection or reduce your quantity.".red, "\nThank you for shopping at Bamazon!".magenta);
-                    bamazon();
-                }
+                                bamazon();
+                            });
+                    }
+                    //Low inventory warning
+                    else {
+                        console.log("INSUFFICIENT INVENTORY ALERT: \nBamazon only has ".red + selectedItem[0].stock_quantity + " " + selectedItem[0].product_name.cyan + " in stock at this moment. \nPlease make another selection or reduce your quantity.".red, "\nThank you for shopping at Bamazon!".magenta);
+                        bamazon();
+                    }
+                });
             });
-        });
     });
 }
