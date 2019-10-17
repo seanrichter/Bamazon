@@ -10,10 +10,10 @@
 
 ### Screenshot of this Project
 
-![Alt Text](https://github.com/seanrichter/Bamazon/blob/master/images/inital%20node%20bamazonCustomer.PNG?raw=true)
-![Alt Text](https://github.com/seanrichter/Bamazon/blob/master/images/prompt%20to%20enter%20product%20ID.PNG?raw=true)
-![Alt Text](https://github.com/seanrichter/Bamazon/blob/master/images/prompt%20to%20enter%20quantity.PNG?raw=true)
-![Alt Text](https://github.com/seanrichter/Bamazon/blob/master/images/showing%20your%20purchase%20was%20complete.PNG?raw=true)
+![Inital log of bamazonCustomer.js](https://github.com/seanrichter/Bamazon/blob/master/images/inital%20node%20bamazonCustomer.PNG?raw=true)
+![Entering the product ID](https://github.com/seanrichter/Bamazon/blob/master/images/prompt%20to%20enter%20product%20ID.PNG?raw=true)
+![Choosing quantity to purchase](https://github.com/seanrichter/Bamazon/blob/master/images/prompt%20to%20enter%20quantity.PNG?raw=true)
+![Total Sale Amount](https://github.com/seanrichter/Bamazon/blob/master/images/showing%20your%20purchase%20was%20complete.PNG?raw=true)
 
 ### Technologies Utilized
 
