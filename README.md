@@ -10,7 +10,11 @@
 
 ### Screenshot of this Project
 
-![Bamazon CLI](screenshot "Bamazon CLI")
+### Before
+![Alt Text](images\inital node bamazonCustomer.PNG)
+
+### After
+![Alt Text]()
 
 ### Technologies Utilized
 
@@ -20,3 +24,8 @@
 * NPM Inquirer
 * NPM Colors
 * NPM console.table
+
+### Link to README.md
+
+[I'm a relative reference to a repository file](../blob/master/LICENSE
+[GitHub Repository](https://github.com/seanrichter/Bamazon)
