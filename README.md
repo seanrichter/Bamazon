@@ -5,7 +5,7 @@
 
 1. Clone repo
 2. Run `npm install`
-3. Build database from `schema.sql` and `seeds_<15 or 100>.sql`
+3. Build database from `schema.sql` and `products.sql`
 4. At command prompt run `node bamazonCustomer.js`
 
 ### Screenshot of this Project
