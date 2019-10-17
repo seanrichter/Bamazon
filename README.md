@@ -26,5 +26,4 @@
 
 ### Link to README.md
 
-[I'm a relative reference to a repository file](../blob/master/LICENSE
 [GitHub Repository](https://github.com/seanrichter/Bamazon)
