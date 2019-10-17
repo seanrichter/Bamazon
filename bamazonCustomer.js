@@ -1,5 +1,3 @@
-console.log("Hello Bamazon")
-
 //Dependencies
 var mysql = require("mysql")
 var inquirer = require("inquirer")
@@ -26,6 +24,7 @@ Connection.connect(function (err) {
 function bamazon() {
     Connection.query('SELECT * FROM products', function (err, res) {
         if (err) throw err;
+        
         //Cli-Table display with color
         var table = new Table(
             {
