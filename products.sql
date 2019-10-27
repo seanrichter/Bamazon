@@ -13,4 +13,4 @@ INSERT INTO `products` (`product_name`, `department_name`, `price`, `stock_quant
 INSERT INTO `products` (`product_name`, `department_name`, `price`, `stock_quantity`) VALUES ('Faux Leather Futon', 'home goods', 184.99, 22);
 INSERT INTO `products` (`product_name`, `department_name`, `price`, `stock_quantity`) VALUES ('Bear Skin Rug', 'home goods', 99.99, 16);
 INSERT INTO `products` (`product_name`, `department_name`, `price`, `stock_quantity`) VALUES ('Patio String Lights', 'home goods', 29.99, 142);
-INSERT INTO `products` (`product_name`, `department_name`, `price`, `stock_quantity`) VALUES ('Extra Large Bean Bag', 'home goods', 59.99, 12);id
+INSERT INTO `products` (`product_name`, `department_name`, `price`, `stock_quantity`) VALUES ('Extra Large Bean Bag', 'home goods', 59.99, 12);
